@@ -26,3 +26,10 @@ Route::get('/welcome/second', [WelcomeController::class, 'second']);
 // form入力テスト用
 Route::get('/test', [TestController::class, 'index']);
 Route::post('/test/input', [TestController::class, 'input']);
+
+// 認可処理
+Route::middleware(['auth'])->group(function () {
+    Route::get('/task/list', [TaskController::class, 'list']);
+    Route::post('/task/register', [TaskController::class, 'register']);
+    Route::get('/logout', [AuthController::class, 'logout']);
+});

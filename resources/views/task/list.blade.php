@@ -6,13 +6,14 @@
 {{-- メインコンテンツ --}}
 @section('contets')
         <h1>タスクの登録(未実装)</h1>
-            <form action="./top.html" method="post">
-                タスク名:<input><br>
-                期限:<input type="date"><br>
-                タスク詳細:<textarea></textarea><br>
-                重要度:<label><input type="radio" name="priority">低い</label> /
-                    <label><input type="radio" name="priority" checked>普通</label> /
-                    <label><input type="radio" name="priority">高い</label><br>
+            <form action="./task/register" method="post">
+                @csrf
+                タスク名:<input name="name"><br>
+                期限:<input name="period" type="date"><br>
+                タスク詳細:<textarea name="detail"></textarea><br>
+                重要度:<label><input type="radio" name="priority" value="1">低い</label> /
+                    <label><input type="radio" name="priority" value="2" checked>普通</label> /
+                    <label><input type="radio" name="priority" value="3">高い</label><br>
                 <button>タスクを登録する</button>
             </form>
 
