@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TaskRegisterPostRequest;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
@@ -24,6 +25,16 @@ class TaskController extends Controller
     {
         // validate済みのデータの取得
         $datum = $request->validated();
-        var_dump($datum); exit;
+        //
+        //$user = Auth::user();
+        //$id = Auth::id();
+        //var_dump($datum, $user, $id); exit;
+
+        // user_id の追加
+        $datum['user_id'] = Auth::id();
+
+        // テーブルへのINSERT
+        $r = TaskModel::create($datum);
+var_dump($r); exit;
     }
 }

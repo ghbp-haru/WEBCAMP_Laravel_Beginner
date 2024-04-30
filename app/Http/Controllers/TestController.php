@@ -2,6 +2,7 @@
 declare(strict_types=1);
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TestPostRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -22,17 +23,16 @@ class TestController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function input(Request $request)
+    public function input(TestPostRequest $request)
     {
-        // データの取得＋validate
-        $validatedData = $request->validate([
-            'email' => ['required', 'email', 'max:254'],
-            'password' => ['required', 'max:72'],
-        ]);
+        // validate済
+
+        // データの取得
+        $validatedData = $request->validated();
 
         //
-        var_dump($validatedData); exit;
+        //var_dump($validatedData); exit;
 
-        //return view('test.input');
+        return view('test.input', ['datum' => $validatedData]);
     }
 }
