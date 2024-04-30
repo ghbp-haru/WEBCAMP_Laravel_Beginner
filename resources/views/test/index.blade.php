@@ -3,7 +3,7 @@
 {{-- メインコンテンツ --}}
 @section('contets')
 
-        @if ($errors->any())
+        @if ($errors->any())s
             <div>
             @foreach ($errors->all() as $error)
                 {{ $error }}<br>
