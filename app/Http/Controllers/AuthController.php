@@ -39,9 +39,10 @@ class AuthController extends Controller
                    ;
         }
 
+//dd($datum);
         //
         $request->session()->regenerate();
-        return redirect()->intended('/task/list');
+        return redirect()->route('tasklist');
     }
 
     /**
