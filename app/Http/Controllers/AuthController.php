@@ -11,7 +11,7 @@ class AuthController extends Controller
 {
     /**
      * トップページ を表示する
-     * 
+     *
      * @return \Illuminate\View\View
      */
     public function index()
@@ -21,7 +21,7 @@ class AuthController extends Controller
 
     /**
      * ログイン処理
-     * 
+     *
      */
     public function login(LoginPostRequest $request)
     {
@@ -46,13 +46,13 @@ class AuthController extends Controller
 
     /**
      * ログアウト処理
-     * 
+     *
      */
     public function logout(Request $request)
     {
         Auth::logout();
         $request->session()->regenerateToken();  // CSRFトークンの再生成
         $request->session()->regenerate();  // セッションIDの再生成
-        return redirect('/');
+        return redirect(route('front.index'));
     }
 }

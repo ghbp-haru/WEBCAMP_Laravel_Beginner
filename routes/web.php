@@ -18,7 +18,7 @@ use App\Http\Controllers\TestController;
 */
 
 // タスク管理システム
-Route::get('/', [AuthController::class, 'index']);
+Route::get('/', [AuthController::class, 'index'])->name('front.index');
 Route::post('/login', [AuthController::class, 'login']);
 // 認可処理
 Route::middleware(['auth'])->group(function () {
