@@ -28,13 +28,14 @@ class TaskController extends Controller
         //
         //$user = Auth::user();
         //$id = Auth::id();
-        //var_dump($datum, $user, $id); exit;
+        // var_dump($datum); exit;
+        // var_dump($datum, $user, $id); exit;
 
         // user_id の追加
-        $datum['user_id'] = Auth::id();
+         $datum['user_id'] = Auth::id();
 
         // テーブルへのINSERT
-        $r = TaskModel::create($datum);
+         $r = TaskModel::create($datum);
 var_dump($r); exit;
     }
 }
