@@ -24,3 +24,4 @@ class FrontAuthUser extends Seeder
         ]);
     }
 }
+
