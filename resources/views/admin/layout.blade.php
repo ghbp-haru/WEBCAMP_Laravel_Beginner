@@ -1,20 +1,21 @@
-@extends('admin.layout')
-
-{{-- メインコンテンツ --}}
-@section('contets')
-        <h1>管理画面 ログイン</h1>
-        @if ($errors->any())
-            <div>
-            @foreach ($errors->all() as $error)
-                {{ $error }}<br>
-            @endforeach
-            </div>
-        @endif
-        <form action="/admin/login" method="post">
-            @csrf
-            ログインID：<input name="login_id" value="{{ old('login_id') }}"><br>
-            パスワード：<input  name="password" type="password"><br>
-            <button class="btn btn-primary mb-3">ログインする</button>
-        </form>
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ログイン機能付きタスク管理サービス 管理画面 @yield('title')</title>
+    </head>
+    <body>
+@auth('admin')
+        <menu label="リンク">
+        <a href="/admin/user/list">ユーザ一覧</a><br>
+        管理画面機能 1<br>
+        管理画面機能 2<br>
+        管理画面機能 3<br>
+        管理画面機能 4<br>
+        <a href="/admin/logout">ログアウト</a><br>
+        </menu>
+@endauth
+@yield('contets')
     </body>
-@endsection
+</html>

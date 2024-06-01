@@ -34,9 +34,9 @@ class AuthController extends Controller
         // 認証
         if (Auth::guard('admin')->attempt($datum) === false) {
             return back()
-                   ->withInput() // 入力値の保持
-                   ->withErrors(['auth' => 'ログインIDかパスワードに誤りがあります。',]) // エラーメッセージの出力
-                   ;
+                  ->withInput() // 入力値の保持
+                  ->withErrors(['auth' => 'ログインIDかパスワードに誤りがあります。',]) // エラーメッセージの出力
+                  ;
         }
 
         //
