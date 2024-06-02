@@ -2,7 +2,7 @@
 
 {{-- メインコンテンツ --}}
 @section('contets')
-        <h1>ログイン</h1>
+        <h1>ユーザー登録</h1>
         @if ($errors->any())
             <div>
             @foreach ($errors->all() as $error)
@@ -12,13 +12,10 @@
         @endif
         <form action="/login" method="post">
             @csrf
-            email：<input name="email" value="{{ old('email') }}"><br>
+            名前:<input name="name" type="text"><br>
+            email：<input name="email" type="email"><br>
             パスワード：<input  name="password" type="password"><br>
-            <button>ログインする</button>
+            <button>登録する</button>
         </form>
 
-        <hr>
-        <menu label="リンク">
-        <a href="/user/register">会員登録</a><br>
-        </menu>
 @endsection

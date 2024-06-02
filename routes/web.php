@@ -61,3 +61,7 @@ Route::prefix('/admin')->group(function () {
     });
     Route::get('/logout', [AdminAuthController::class, 'logout']);
 });
+
+// ユーザー登録
+Route::get('/user/register', [UserController::class, 'list']);
+Route::post('user/register', [UserController::class, 'register']);
