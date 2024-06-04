@@ -41,7 +41,7 @@ class UserController extends Controller
         //var_dump($datum, $user, $id); exit;
 
         // user_id の追加
-        $datum['user_id'] = Auth::id();
+        // $datum['user_id'] = Auth::id();
 
         // テーブルへのINSERT
         try {
@@ -53,7 +53,7 @@ class UserController extends Controller
         }
 
         // タスク登録成功
-        $request->session()->flash('front.task_register_success', true);
+        $request->session()->flash('front.User_register_success', true);
 
         //
         return redirect('index');

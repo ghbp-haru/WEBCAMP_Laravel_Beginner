@@ -3,6 +3,9 @@
 {{-- メインコンテンツ --}}
 @section('contets')
         <h1>ユーザー登録</h1>
+        @if (session('front.User_register_success') == true)
+                タスクを登録しました！！<br>
+            @endif
         @if ($errors->any())
             <div>
             @foreach ($errors->all() as $error)
@@ -10,7 +13,7 @@
             @endforeach
             </div>
         @endif
-        <form action="/login" method="post">
+        <form action="/user/register" method="post">
             @csrf
             名前:<input name="name" type="text"><br>
             email：<input name="email" type="email"><br>
