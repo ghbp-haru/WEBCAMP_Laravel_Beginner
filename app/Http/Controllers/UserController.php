@@ -33,6 +33,8 @@ class UserController extends Controller
     {
         // validate済みのデータの取得
         $datum = $request->validated();
+
+        $datum['password'] = Hash::make($datum['password']);
         //
         //$user = Auth::user();
         //$id = Auth::id();
