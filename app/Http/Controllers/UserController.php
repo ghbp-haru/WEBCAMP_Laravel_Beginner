@@ -55,8 +55,9 @@ class UserController extends Controller
         // 登録成功
         $request->session()->flash('front.user_register_success', true);
 
+        // ddd(request()->session()->has("front.user_register_success"));
         //
-        return redirect('index');
+        return redirect('/');
     }
 
 //     /**

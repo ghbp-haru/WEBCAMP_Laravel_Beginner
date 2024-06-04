@@ -65,4 +65,8 @@ Route::prefix('/admin')->group(function () {
 
 // ユーザー登録編
 Route::get('/user/register', [UserController::class, 'index']);
-Route::post('user/register', [UserController::class, 'register']);
+
+ Route::prefix('/user')->group(function () {
+  Route::post('/register', [UserController::class, 'register']);
+  Route::get('/', [UserController::class, ''])->name('front.index');
+});
