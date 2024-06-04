@@ -5,6 +5,7 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
@@ -62,6 +63,6 @@ Route::prefix('/admin')->group(function () {
     Route::get('/logout', [AdminAuthController::class, 'logout']);
 });
 
-// ユーザー登録
-Route::get('/user/register', [UserController::class, 'list']);
+// ユーザー登録編
+Route::get('/user/register', [UserController::class, 'index']);
 Route::post('user/register', [UserController::class, 'register']);

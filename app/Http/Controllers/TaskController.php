@@ -222,7 +222,7 @@ var_dump($sql);
             var_dump($e->getMessage()); exit;
             // トランザクション異常終了
             DB::rollBack();
-            // 完了失敗メッセージ出力
+               // 完了失敗メッセージ出力
             $request->session()->flash('front.task_completed_failure', true);
         }
 
