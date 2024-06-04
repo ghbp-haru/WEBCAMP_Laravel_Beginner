@@ -3,7 +3,7 @@
 {{-- メインコンテンツ --}}
 @section('contets')
         <h1>ユーザー登録</h1>
-        @if (session('front.User_register_success') == true)
+        @if (session('front.user_register_success') == true)
                 タスクを登録しました！！<br>
             @endif
         @if ($errors->any())
