@@ -18,13 +18,13 @@ class UserController extends Controller
      /**
      * 一覧用の Illuminate\Database\Eloquent\Builder インスタンスの取得
      */
-//     protected function getListBuilder()
-//     {
-//         return TaskModel::where('user_id', Auth::id())
-//                      ->orderBy('priority', 'DESC')
-//                      ->orderBy('period')
-//                      ->orderBy('created_at');
-//     }
+    protected function getListBuilder()
+    {
+        return UserModel::where('user_id', Auth::id())
+                     ->orderBy('priority', 'DESC')
+                     ->orderBy('period')
+                     ->orderBy('created_at');
+    }
 
     /**
      * ゆーざー新規登録
@@ -45,7 +45,7 @@ class UserController extends Controller
 
         // テーブルへのINSERT
         try {
-            $r = TaskModel::create($datum);
+            $r = UserModel::create($datum);
         } catch(\Throwable $e) {
             // XXX 本当はログに書く等の処理をする。今回は一端「出力する」だけ
             echo $e->getMessage();
