@@ -37,7 +37,7 @@ $sql = $this->getListBuilder()
 var_dump($sql);
 */
         //
-        return view('task.completed_list', ['list' => $list]);
+        return view('/completed_tasks/list', ['list' => $list]);
     }
 
 }

@@ -14,15 +14,16 @@ class CompletedTask extends Model
      */
     protected $guarded = [];
 
-    const PRIORITY_VALUE = [
-        1 => '低い',
-        2 => '普通',
-        3 => '高い',
-    ];
+    // const PRIORITY_VALUE = [
+    //     1 => '低い',
+    //     2 => '普通',
+    //     3 => '高い',
+    // ];
 
-    public function getPriorityString()
-    {
-        return $this::PRIORITY_VALUE[ $this->priority ] ?? '';
-    }
+    // public function getPriorityString()
+    // {
+    //     return $this::PRIORITY_VALUE[ $this->priority ] ?? '';
+    // }
+
 
 }
