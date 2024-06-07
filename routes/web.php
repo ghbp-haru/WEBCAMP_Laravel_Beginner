@@ -68,5 +68,5 @@ Route::get('/user/register', [UserController::class, 'index']);
 
  Route::prefix('/user')->group(function () {
   Route::post('/register', [UserController::class, 'register']);
-  Route::get('/', [UserController::class, ''])->name('front.index');
+//   Route::get('/logout', [UserController::class, 'logout'])->name('user_front.index');
 });
