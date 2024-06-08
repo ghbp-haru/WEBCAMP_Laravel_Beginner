@@ -18,10 +18,11 @@
             email：<input name="email" value="{{ old('email') }}"><br>
             パスワード：<input  name="password" type="password"><br>
             <button>ログインする</button>
+            
+            <p class="text-left">
+             <menu label="リンク">
+             <a href="/user/register">会員登録</a>
+            </p>
+            </menu>
         </form>
-
-        <hr>
-        <menu label="リンク">
-        <a href="/user/register">会員登録</a><br>
-        </menu>
 @endsection
