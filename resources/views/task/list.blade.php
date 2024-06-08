@@ -77,6 +77,6 @@
         <br>
         <hr>
         <menu label="リンク">
-        <a href="t/logout">ログアウト</a><br>
+        <a href="/logout">ログアウト</a><br>
         </menu>
 @endsection
